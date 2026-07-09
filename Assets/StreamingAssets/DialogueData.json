@@ -1,0 +1,305 @@
+{
+  "dialogues": [
+    {
+      "id": 0,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Hey.",
+      "choices": [
+        {
+          "choice": "Hey.",
+          "reactionText": "TOO SHORT",
+          "nextDialogue": 1,
+          "choiceThoughts": 
+          [
+            {"text": "TOO SHORT", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0},
+            {"text": "SPEAK MORE", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Hey, how are you?",
+          "reactionText": "DESPERATE",
+          "nextDialogue": 2,
+          "choiceThoughts": 
+          [
+            {"text": "NEEDY", "intensity": 0},
+            {"text": "TOO MANY QUESTIONS", "intensity": 0},
+            {"text": "DONT WANNA KNOW", "intensity": 0},
+            {"text": "TOO LONG", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "...",
+          "reactionText": "SAY SOMETHING",
+          "nextDialogue": 3,
+          "choiceThoughts": 
+          [
+            {"text": "MORON", "intensity": 0},
+            {"text": "SPEAK", "intensity": 0},
+            {"text": "SAY SOMETHING", "intensity": 0},
+            {"text": "TOO QUIET", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "id": 1,
+          "speaker": "",
+          "caricatureName": "",
+          "dialogue": "",
+          "choices": [
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0}
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0}
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "id": 2,
+          "speaker": "",
+          "caricatureName": "",
+          "dialogue": "",
+          "choices": [
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": [
+                {
+                  "text": "",
+                  "intensity": 0
+                }
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": [
+                {
+                  "text": "",
+                  "intensity": 0
+                }
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": [
+                {
+                  "text": "",
+                  "intensity": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "You good?",
+      "choices": [
+        {
+          "choice": "Yeah.",
+          "reactionText": "TOO SHORT",
+          "nextDialogue": 4,
+          "choiceThoughts":
+          [
+            {"text": "TOO SHORT", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0},
+            {"text": "SPEAK MORE", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Just thinking.",
+          "reactionText": "LIAR",
+          "nextDialogue": 5,
+          "choiceThoughts":
+          [
+            {"text": "BULLSHIT", "intensity": 0},
+            {"text": "TELL THE TRUTH", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "...",
+          "reactionText": "SPEAK",
+          "nextDialogue": 6,
+          "choiceThoughts":
+          [
+            {"text": "MORON", "intensity": 0},
+            {"text": "SPEAK", "intensity": 0},
+            {"text": "SAY SOMETHING", "intensity": 0},
+            {"text": "TOO QUIET", "intensity": 0},
+            {"text": "THEY ASKED", "intensity": 0},
+            {"text": "DUMBASS", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "id": 4,
+          "speaker": "",
+          "caricatureName": "",
+          "dialogue": "",
+          "choices": [
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0}
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0}
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": [
+                {
+                  "text": "",
+                  "intensity": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dialogues": [
+        {
+          "id": 5,
+          "speaker": "",
+          "caricatureName": "",
+          "dialogue": "",
+          "choices": [
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0}
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0
+                }
+              ]
+            },
+            {
+              "choice": "",
+              "reactionText": "",
+              "nextDialogue": 0,
+              "choiceThoughts": 
+              [
+                {"text": "", "intensity": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "What's up? Why aren't you talking?",
+      "choices": [
+        {
+          "choice": "It's nothing.",
+          "reactionText": "STOP LYING",
+          "nextDialogue": 7,
+          "choiceThoughts":
+          [
+            {"text": "IT'S SOMETHING", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0},
+            {"text": "BE HONEST", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Just thinking.",
+          "reactionText": "LIAR",
+          "nextDialogue": 8,
+          "choiceThoughts":
+          [
+            {"text": "BULLSHIT", "intensity": 0},
+            {"text": "TELL THE TRUTH", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "...",
+          "reactionText": "OH GOD",
+          "nextDialogue": 0,
+          "choiceThoughts":
+          [
+            {"text": "MORON", "intensity": 0},
+            {"text": "SPEAK", "intensity": 0},
+            {"text": "SAY SOMETHING", "intensity": 0},
+            {"text": "TOO QUIET", "intensity": 0},
+            {"text": "THEY ASKED", "intensity": 0},
+            {"text": "DUMBASS", "intensity": 0},
+            {"text": "DO SOMETHING", "intensity": 0},
+            {"text": "PLEASE OH GOD", "intensity": 0},
+            {"text": "THEY'RE STARING", "intensity": 0},
+            {"text": "WHAT'S WRONG WITH YOU", "intensity": 0}
+          ]
+        }
+      ]
+    }
+  ]
+}
