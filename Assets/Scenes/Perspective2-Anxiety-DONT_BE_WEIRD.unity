@@ -341,10 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -393,6 +393,7 @@ RectTransform:
   - {fileID: 1530872677}
   - {fileID: 683654269}
   - {fileID: 109425566}
+  - {fileID: 2129504555}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -566,153 +567,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70596dbd64139cf4ca2c822a2b12318e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  globalVolume: {fileID: 958062366}
+  anxietyLevel: 0
+  lerpSpeed: 2
   speakerText: {fileID: 179951365}
   dialogueText: {fileID: 735289108}
   ReactText: {fileID: 683654270}
+  caricatureImage: {fileID: 0}
+  VignetteAnxietyTexts:
+  - THEYRE ALL LOOKING
   choiceButtons:
   - {fileID: 922215806}
   - {fileID: 1682082764}
   - {fileID: 444193884}
-  dialogues:
-  - speaker: Alex
-    caricature: {fileID: 0}
-    dialogue: Hey.
-    choices:
-    - choice: Hey.
-      choiceThoughts:
-      - text: TOO SHORT
-        intensity: 0
-      - text: SAY MORE
-        intensity: 0
-      reactionText: SPEAK MORE
-      nextDialogue: 1
-    - choice: Hey, how are you doing?
-      choiceThoughts:
-      - text: DESPERATE
-        intensity: 0
-      - text: NEEDY
-        intensity: 0
-      - text: TOO LONG
-        intensity: 0
-      reactionText: DESPERATE
-      nextDialogue: 2
-    - choice: ...
-      choiceThoughts:
-      - text: SAY SOMETHING
-        intensity: 0
-      - text: IDIOT
-        intensity: 0
-      - text: FREAK
-        intensity: 0
-      - text: THEY HATE YOU
-        intensity: 0
-      - text: SPEAK
-        intensity: 0
-      reactionText: TOO QUIET
-      nextDialogue: 3
-  - speaker: Alex
-    caricature: {fileID: 0}
-    dialogue: How are you?
-    choices:
-    - choice: Good.
-      choiceThoughts:
-      - text: TOO SHORT
-        intensity: 0
-      - text: SAY MORE
-        intensity: 0
-      reactionText: COULD DO BETTER
-      nextDialogue: 1
-    - choice: Not that great.
-      choiceThoughts:
-      - text: TOO HONEST
-        intensity: 0
-      - text: THEY MIGHT ASK MORE
-        intensity: 0
-      - text: SHUT UP
-        intensity: 0
-      reactionText: DONT FOLLOW UP
-      nextDialogue: 1
-    - choice: Kill me
-      choiceThoughts:
-      - text: ARE YOU SERIOUS?
-        intensity: 0
-      reactionText: PLEASE
-      nextDialogue: 1
-  - speaker: Alex
-    caricature: {fileID: 0}
-    dialogue: I'm doing pretty good, thanks.
-    choices:
-    - choice: Oh, it's nothing
-      choiceThoughts:
-      - text: BULLSHIT
-        intensity: 0
-      - text: DICK MOVE
-        intensity: 0
-      - text: FAKE HUMBLE
-        intensity: 0
-      reactionText: IT'S SOMETHING
-      nextDialogue: 0
-    - choice: Great.
-      choiceThoughts:
-      - text: DESPERATE
-        intensity: 0
-      - text: NEEDY
-        intensity: 0
-      - text: WEIRD
-        intensity: 0
-      reactionText: WISH I COULD SAY SO
-      nextDialogue: 1
-    - choice: ...
-      choiceThoughts:
-      - text: SAY SOMETHING
-        intensity: 0
-      - text: IDIOT
-        intensity: 0
-      - text: FREAK
-        intensity: 0
-      - text: THEY HATE YOU
-        intensity: 0
-      - text: SPEAK
-        intensity: 0
-      reactionText: DUMBASS
-      nextDialogue: 1
-  - speaker: Alex
-    caricature: {fileID: 0}
-    dialogue: You good?
-    choices:
-    - choice: Yeah.
-      choiceThoughts:
-      - text: TOO SHORT
-        intensity: 0
-      - text: SAY MORE
-        intensity: 0
-      reactionText: 
-      nextDialogue: 1
-    - choice: Just thinking
-      choiceThoughts:
-      - text: DESPERATE
-        intensity: 0
-      - text: NEEDY
-        intensity: 0
-      - text: TOO LONG
-        intensity: 0
-      reactionText: 
-      nextDialogue: 1
-    - choice: ...
-      choiceThoughts:
-      - text: SAY SOMETHING
-        intensity: 0
-      - text: IDIOT
-        intensity: 0
-      - text: FREAK
-        intensity: 0
-      - text: THEY HATE YOU
-        intensity: 0
-      - text: SPEAK
-        intensity: 0
-      reactionText: 
-      nextDialogue: 1
+  testEllipsisImage: {fileID: 2129504555}
+  jsonFileName: DialogueData.json
   currentDialogue: 0
+  radiusX: 400
+  radiusY: 250
+  segments: 64
 --- !u!4 &180555067
 Transform:
   m_ObjectHideFlags: 0
@@ -1748,7 +1621,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   thoughtPrefab: {fileID: 6582403722458969733, guid: 2b9473e47e5727445b092817992dcac3, type: 3}
+  vignetteThoughtPrefab: {fileID: 6582403722458969733, guid: 93ca5ad86f32aad469350e7174feba78, type: 3}
   canvas: {fileID: 166322941}
+  dialogueManager: {fileID: 180555066}
 --- !u!4 &1437131338
 Transform:
   m_ObjectHideFlags: 0
@@ -2220,6 +2095,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682082762}
+  m_CullTransparentMesh: 1
+--- !u!1 &2129504554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129504555}
+  - component: {fileID: 2129504557}
+  - component: {fileID: 2129504556}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2129504555
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129504554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 166322945}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2129504556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129504554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ce3381b37909df140a44aff91ab58848, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2129504557
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129504554}
   m_CullTransparentMesh: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

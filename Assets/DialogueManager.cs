@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class AnxietyThought
@@ -25,10 +28,14 @@ public class Choices
 public class Dialogue
 {
     public int id;
+    [Range(0, 100)]
+    public int anxietyLevel;
     public string speaker;
     public string caricatureName; // Changed from Sprite to string for JSON compatibility
     [TextArea]
     public string dialogue;
+    public bool JustText;
+    public bool hideUI;
     public Choices[] choices;
 }
 
@@ -40,11 +47,18 @@ public class DialogueDatabase
 }
 public class DialogueManager : MonoBehaviour
 {
+    public Volume globalVolume;
+    [Range(0, 100)]
+    public float anxietyLevel;
+    private float currentAnxietyLevel;
+    public float lerpSpeed = 2f; 
     public TMP_Text speakerText;
     public TMP_Text dialogueText;
     public TMP_Text ReactText;
     public Image caricatureImage; // Reference to UI Image to display the character sprite
+    public string[] VignetteAnxietyTexts;
     public ChoiceButton[] choiceButtons;
+    public RectTransform testEllipsisImage;
     
     [Header("JSON Configuration")]
     public string jsonFileName = "DialogueData.json";
@@ -52,6 +66,28 @@ public class DialogueManager : MonoBehaviour
     // This array is now populated dynamically from the JSON file at runtime
     private Dialogue[] dialogues;
     public int currentDialogue;
+
+    void Update()
+    {
+        // 1. Smoothly lerp the anxiety level
+        currentAnxietyLevel = Mathf.Lerp(currentAnxietyLevel, anxietyLevel, Time.deltaTime * lerpSpeed);
+
+        if (Mathf.Abs(currentAnxietyLevel - anxietyLevel) < 0.001f)
+        {
+            currentAnxietyLevel = anxietyLevel;
+        }
+        float t = anxietyLevel / 100f;
+        float scale = Mathf.Lerp(0.95f, 0.35f, t);
+        testEllipsisImage.localScale = Vector3.one * scale;
+        // 2. Apply your formula directly using the smoothly shifting currentAnxiety
+        if (globalVolume != null)
+        {
+            float calculatedWeight = 0.236f + currentAnxietyLevel * 0.005f;
+            
+            // Clamp01 ensures the value stays safely between 0.0 and 1.0
+            globalVolume.weight = Mathf.Clamp01(calculatedWeight);
+        }
+    }
 
     void Start()
     {
@@ -91,41 +127,83 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogues == null || dialogues.Length == 0) return;
 
-        Dialogue current = dialogues[currentDialogue];
+        Dialogue current = GetDialogueByID(currentDialogue);
+
+        if (current == null)
+            return;
         speakerText.text = current.speaker;
         dialogueText.text = current.dialogue;
 
         // Dynamic Sprite Loading: Looks inside Assets/Resources/ folder for a matching sprite name
-        if (!string.IsNullOrEmpty(current.caricatureName) && caricatureImage != null)
+        if (caricatureImage != null)
         {
-            Sprite loadedSprite = Resources.Load<Sprite>(current.caricatureName);
-            if (loadedSprite != null)
+            if (!string.IsNullOrEmpty(current.caricatureName))
             {
-                caricatureImage.sprite = loadedSprite;
+                Sprite loadedSprite = Resources.Load<Sprite>(current.caricatureName);
+
+                if (loadedSprite != null)
+                {
+                    caricatureImage.sprite = loadedSprite;
+                    caricatureImage.enabled = true;
+                }
+                else
+                {
+                    caricatureImage.sprite = null;
+                    caricatureImage.enabled = false;
+                }
+            }
+            else
+            {
+                caricatureImage.sprite = null;
+                caricatureImage.enabled = false;
             }
         }
         
         // Safety check to avoid index out of bounds exceptions on your button configuration
-        for (int i = 0; i < choiceButtons.Length; i++)
+        if (current.JustText)
         {
-            if (i < current.choices.Length)
+            if (current.choices.Length == 0)
             {
-                choiceButtons[i].gameObject.SetActive(true);
-                choiceButtons[i].SetChoice(current.choices[i], current.choices[i].nextDialogue);
+                Debug.LogError($"Dialogue {current.id} is marked justText but has no choices.");
+                return;
             }
-            else
+
+            choiceButtons[0].gameObject.SetActive(false);
+            choiceButtons[2].gameObject.SetActive(false);
+
+            choiceButtons[1].gameObject.SetActive(true);
+            choiceButtons[1].SetChoice(current.choices[0], current.choices[0].nextDialogue);
+
+            choiceButtons[1].choiceText.text =
+                string.IsNullOrWhiteSpace(current.choices[0].choice)
+                    ? "Continue"
+                    : current.choices[0].choice;
+        }
+        else
+        {
+            for (int i = 0; i < choiceButtons.Length; i++)
             {
-                // Hides buttons if this particular dialogue piece has fewer choices
-                choiceButtons[i].gameObject.SetActive(false); 
+                if (i < current.choices.Length)
+                {
+                    choiceButtons[i].gameObject.SetActive(true);
+                    choiceButtons[i].SetChoice(current.choices[i], current.choices[i].nextDialogue);
+                }
+                else
+                {
+                    // Hides buttons if this particular dialogue piece has fewer choices
+                    choiceButtons[i].gameObject.SetActive(false); 
+                }
             }
         }
+
+        anxietyLevel = current.anxietyLevel;
     }
 
     public void GoToDialogue(int index, string reactString)
     {
-        if (index < 0 || index >= dialogues.Length)
+        if (GetDialogueByID(index) == null)
         {
-            Debug.LogError($"Dialogue index {index} doesn't exist.");
+            Debug.LogError($"Dialogue ID {index} doesn't exist.");
             return;
         }
 
@@ -138,7 +216,49 @@ public class DialogueManager : MonoBehaviour
     {
         ReactText.gameObject.SetActive(true);
         ReactText.text = text;
+        ReactText.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         yield return new WaitForSeconds(Random.Range(0.7f, 1.5f));
         ReactText.gameObject.SetActive(false);
+    }
+    public float radiusX = 400;
+    public float radiusY = 250;
+    public int segments = 64;
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+
+        Vector3 center = Camera.main.ViewportToWorldPoint(
+            new Vector3(0.5f, 0.5f, 10f)
+        );
+
+        Vector3 prev = center + new Vector3(radiusX, 0, 0);
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float angle = i / (float)segments * Mathf.PI * 2f;
+
+            Vector3 next = center + new Vector3(
+                Mathf.Cos(angle) * radiusX,
+                Mathf.Sin(angle) * radiusY,
+                0
+            );
+
+            Gizmos.DrawLine(prev, next);
+            prev = next;
+        }
+    }
+    public Dialogue GetDialogueByID(int id)
+    {
+        foreach (Dialogue dialogue in dialogues)
+        {
+            if (dialogue.id == id)
+            {
+                return dialogue;
+            }
+        }
+
+        Debug.LogError($"Dialogue ID {id} not found.");
+        return null;
     }
 }

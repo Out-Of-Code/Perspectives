@@ -2,9 +2,12 @@
   "dialogues": [
     {
       "id": 0,
+      "anxietyLevel": 0,
       "speaker": "Alex",
       "caricatureName": "",
       "dialogue": "Hey.",
+      "JustText": false,
+      "hideUI": false,
       "choices": [
         {
           "choice": "Hey.",
@@ -44,94 +47,102 @@
       ]
     },
     {
-      "dialogues": [
+      "id": 1,
+      "anxietyLevel": 10,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "How are you?",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
         {
-          "id": 1,
-          "speaker": "",
-          "caricatureName": "",
-          "dialogue": "",
-          "choices": [
-            {
-              "choice": "",
-              "reactionText": "",
-              "nextDialogue": 0,
-              "choiceThoughts": 
-              [
-                {"text": "", "intensity": 0}
-              ]
-            },
-            {
-              "choice": "",
-              "reactionText": "",
-              "nextDialogue": 0,
-              "choiceThoughts": 
-              [
-                {"text": "", "intensity": 0}
-              ]
-            },
-            {
-              "choice": "",
-              "reactionText": "",
-              "nextDialogue": 0,
-              "choiceThoughts": 
-              [
-                {"text": "", "intensity": 0}
-              ]
-            }
+          "choice": "Good.",
+          "reactionText": "TOO QUIET",
+          "nextDialogue": 10,
+          "choiceThoughts": 
+          [
+            {"text": "TOO SHORT", "intensity": 0},
+            {"text": "SAY MORE", "intensity": 0},
+            {"text": "SO QUIET", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Okay.",
+          "reactionText": "SO QUIET",
+          "nextDialogue": 10,
+          "choiceThoughts": 
+          [
+            {"text": "TOO SHORT", "intensity": 0},
+            {"text": "SAY MORE", "intensity": 0},
+            {"text": "SO QUIET", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Could be better.",
+          "reactionText": "SHUT UP",
+          "nextDialogue": 11,
+          "choiceThoughts": 
+          [
+            {"text": "TOO HONEST", "intensity": 0},
+            {"text": "THEY PITY YOU", "intensity": 0},
+            {"text": "SHUT UP", "intensity": 0}
           ]
         }
       ]
     },
     {
-      "dialogues": [
-        {
           "id": 2,
-          "speaker": "",
+      "anxietyLevel": 0,
+          "speaker": "Alex",
           "caricatureName": "",
-          "dialogue": "",
+          "dialogue": "Pretty good, thanks!",
+      "JustText": false,
+      "hideUI": false,
           "choices": [
             {
-              "choice": "",
-              "reactionText": "",
+              "choice": "Oh, great.",
+              "reactionText": "PHEW",
               "nextDialogue": 0,
-              "choiceThoughts": [
-                {
-                  "text": "",
-                  "intensity": 0
-                }
+              "choiceThoughts": 
+              [
+                {"text": "OH", "intensity": 0},
+                {"text": "THAT WORKED", "intensity": 0},
+                {"text": "PHEW", "intensity": 0},
+                {"text": "THANK GOD", "intensity": 0}
               ]
             },
             {
-              "choice": "",
-              "reactionText": "",
+              "choice": "Nice.",
+              "reactionText": "THAT WORKED",
               "nextDialogue": 0,
               "choiceThoughts": [
-                {
-                  "text": "",
-                  "intensity": 0
-                }
+                {"text": "THANK GOD", "intensity": 0},
+                {"text": "OH", "intensity": 0},
+                {"text": "THAT WORKED", "intensity": 0},
+                {"text": "PHEW", "intensity": 0}
               ]
             },
             {
-              "choice": "",
-              "reactionText": "",
+              "choice": "No problem.",
+              "reactionText": "OK DO GOOD LIKE THAT",
               "nextDialogue": 0,
               "choiceThoughts": [
-                {
-                  "text": "",
-                  "intensity": 0
-                }
+                {"text": "PHEW", "intensity": 0},
+                {"text": "OH", "intensity": 0},
+                {"text": "THAT WORKED", "intensity": 0},
+                {"text": "THANK GOD", "intensity": 0}
               ]
             }
           ]
-        }
-      ]
     },
     {
       "id": 3,
+      "anxietyLevel": 20,
       "speaker": "Alex",
       "caricatureName": "",
       "dialogue": "You good?",
+      "JustText": false,
+      "hideUI": false,
       "choices": [
         {
           "choice": "Yeah.",
@@ -172,12 +183,13 @@
       ]
     },
     {
-      "dialogues": [
-        {
           "id": 4,
+      "anxietyLevel": 0,
           "speaker": "",
           "caricatureName": "",
           "dialogue": "",
+      "JustText": false,
+      "hideUI": false,
           "choices": [
             {
               "choice": "",
@@ -209,16 +221,15 @@
               ]
             }
           ]
-        }
-      ]
     },
     {
-      "dialogues": [
-        {
           "id": 5,
+      "anxietyLevel": 0,
           "speaker": "",
           "caricatureName": "",
           "dialogue": "",
+      "JustText": false,
+      "hideUI": false,
           "choices": [
             {
               "choice": "",
@@ -250,19 +261,20 @@
               ]
             }
           ]
-        }
-      ]
     },
     {
       "id": 6,
+      "anxietyLevel": 50,
       "speaker": "Alex",
       "caricatureName": "",
       "dialogue": "What's up? Why aren't you talking?",
+      "JustText": false,
+      "hideUI": false,
       "choices": [
         {
           "choice": "It's nothing.",
           "reactionText": "STOP LYING",
-          "nextDialogue": 7,
+          "nextDialogue": 8,
           "choiceThoughts":
           [
             {"text": "IT'S SOMETHING", "intensity": 0},
@@ -273,7 +285,7 @@
         {
           "choice": "Just thinking.",
           "reactionText": "LIAR",
-          "nextDialogue": 8,
+          "nextDialogue": 9,
           "choiceThoughts":
           [
             {"text": "BULLSHIT", "intensity": 0},
@@ -284,7 +296,7 @@
         {
           "choice": "...",
           "reactionText": "OH GOD",
-          "nextDialogue": 0,
+          "nextDialogue": 7,
           "choiceThoughts":
           [
             {"text": "MORON", "intensity": 0},
@@ -297,6 +309,428 @@
             {"text": "PLEASE OH GOD", "intensity": 0},
             {"text": "THEY'RE STARING", "intensity": 0},
             {"text": "WHAT'S WRONG WITH YOU", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "anxietyLevel": 100,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "What's wrong with you? Why are you so quiet?",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "I gotta go.",
+          "reactionText": "RUN",
+          "nextDialogue": 7,
+          "choiceThoughts":
+          [
+            {"text": "IT'S SOMETHING", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0},
+            {"text": "BE HONEST", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "I'm sorry.",
+          "reactionText": "GET OUT",
+          "nextDialogue": 8,
+          "choiceThoughts":
+          [
+            {"text": "BULLSHIT", "intensity": 0},
+            {"text": "TELL THE TRUTH", "intensity": 0},
+            {"text": "THEY HATE YOU", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "...",
+          "reactionText": "FUCK",
+          "nextDialogue": -1,
+          "choiceThoughts":
+          [
+            {"text": "MORON", "intensity": 0},
+            {"text": "SPEAK", "intensity": 0},
+            {"text": "SAY SOMETHING", "intensity": 0},
+            {"text": "TOO QUIET", "intensity": 0},
+            {"text": "THEY ASKED", "intensity": 0},
+            {"text": "DUMBASS", "intensity": 0},
+            {"text": "DO SOMETHING", "intensity": 0},
+            {"text": "PLEASE OH GOD", "intensity": 0},
+            {"text": "THEY'RE STARING", "intensity": 0},
+            {"text": "WHAT'S WRONG WITH YOU", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "anxietyLevel": 15,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Good! I'm glad.",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Dope.",
+          "reactionText": "WHAT?",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "DO THEY WANT AN ANSWER", "intensity": 0},
+            {"text": "WHAT DO I SAY", "intensity": 0},
+            {"text": "DONT BE WEIRD", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "...",
+          "reactionText": "TOO QUIET",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "TOO QUIET", "intensity": 0},
+            {"text": "SAY MORE", "intensity": 0},
+            {"text": "SO QUIET", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Thanks.",
+          "reactionText": "TRY HARDER",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "DO BETTER", "intensity": 0},
+            {"text": "DESPERATE", "intensity": 0},
+            {"text": "PATHETIC", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "anxietyLevel": 20,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Dang, i hope you feel better.",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Thanks.",
+          "reactionText": "STOP ASKING",
+          "nextDialogue": 12,
+          "choiceThoughts":
+          [
+            {"text": "PLEASE STOP", "intensity": 0},
+            {"text": "JUST ORDER", "intensity": 0},
+            {"text": "SO AWKWARD", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "No worries.",
+          "reactionText": "ORDER ALREADY",
+          "nextDialogue": 12,
+          "choiceThoughts":
+          [
+            {"text": "I'M WORRIED", "intensity": 0},
+            {"text": "STOP ASKING", "intensity": 0},
+            {"text": "SHUT UP", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Yup.",
+          "reactionText": "NO",
+          "nextDialogue": 12,
+          "choiceThoughts":
+          [
+            {"text": "STOP", "intensity": 0},
+            {"text": "JUST ORDER", "intensity": 0},
+            {"text": "STOP BEING HONEST", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "anxietyLevel": 30,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Great.",
+      "JustText": true,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Continue.",
+          "reactionText": "",
+          "nextDialogue": 13,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "anxietyLevel": 30,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Anyways, what do you wanna order?",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "I think I'll get a burger, like usual.",
+          "reactionText": "BORING",
+          "nextDialogue": 14,
+          "choiceThoughts":
+          [
+            {"text": "PREDICTABLE", "intensity": 0},
+            {"text": "BORING", "intensity": 0},
+            {"text": "NOT INTERESTING", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "I'm not sure, how about you?",
+          "reactionText": "WHY WOULD YOU SAY THAT",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "STUPID", "intensity": 0},
+            {"text": "WHAT KIND OF A QUESTION IS THAT", "intensity": 0},
+            {"text": "SHUT UP", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "I think I'll try the fish sandwich, get out of my comfort zone.",
+          "reactionText": "EW",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "GROSS", "intensity": 0},
+            {"text": "WHY NOT A BURGER", "intensity": 0},
+            {"text": "I'M SCARED", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "anxietyLevel": 15,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Dope, I think I'll get a burger too. Nothing wrong with some comfort food.",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Haha, yeah.",
+          "reactionText": "THANK GOD",
+          "nextDialogue": 15,
+          "choiceThoughts":
+          [
+            {"text": "I'M SAFE", "intensity": 0},
+            {"text": "NOT BORING", "intensity": 0},
+            {"text": "GOOD FOOD", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Hey, burgers are tasty",
+          "reactionText": "REALLY TASTY",
+          "nextDialogue": 15,
+          "choiceThoughts":
+          [
+            {"text": "PHEW", "intensity": 0},
+            {"text": "THEY ARE", "intensity": 0},
+            {"text": "THANK GOD IM NOT BORING", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Yup.",
+          "reactionText": "GOOD CHOICE",
+          "nextDialogue": 15,
+          "choiceThoughts":
+          [
+            {"text": "I DIDNT DIE", "intensity": 0},
+            {"text": "THANK GOD", "intensity": 0},
+            {"text": "WENT WELL", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "anxietyLevel": 30,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "So what've you been doing lately?",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Not much.",
+          "reactionText": "LIAR",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "BULLSHIT", "intensity": 0},
+            {"text": "STOP LYING", "intensity": 0},
+            {"text": "BE HONEST", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "I've been working on a few projects, nothing big.",
+          "reactionText": "TOO HONEST",
+          "nextDialogue": 16,
+          "choiceThoughts":
+          [
+            {"text": "TOO HONEST", "intensity": 0},
+            {"text": "THEY'LL ASK MORE", "intensity": 0},
+            {"text": "SHUT UP", "intensity": 0},
+            {"text": "YOURE FISHING", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Nothing.",
+          "reactionText": "SHUT UP",
+          "nextDialogue": 1234567890,
+          "choiceThoughts":
+          [
+            {"text": "LIAR", "intensity": 0},
+            {"text": "SOUNDS SUSPICIOUS", "intensity": 0},
+            {"text": "BE HONEST", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "anxietyLevel": 50,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Oh, dope! Like what?",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Nothing important.",
+          "reactionText": "LIAR",
+          "nextDialogue": 17,
+          "choiceThoughts":
+          [
+            {"text": "BULLSHIT", "intensity": 0},
+            {"text": "STOP LYING", "intensity": 0},
+            {"text": "BE HONEST", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Just some small stuff.",
+          "reactionText": "BULLSHIT",
+          "nextDialogue": 17,
+          "choiceThoughts":
+          [
+            {"text": "LIAR", "intensity": 0},
+            {"text": "HORSESHIT", "intensity": 0},
+            {"text": "SHUT UP", "intensity": 0},
+            {"text": "ITS NOT SMALL", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "It doesn't matter.",
+          "reactionText": "SHUT UP",
+          "nextDialogue": 17,
+          "choiceThoughts":
+          [
+            {"text": "LIAR", "intensity": 0},
+            {"text": "IT MATTERS", "intensity": 0},
+            {"text": "BE HONEST", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "anxietyLevel": 65,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Oh, okay.",
+      "JustText": true,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "",
+          "reactionText": "",
+          "nextDialogue": 18,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "anxietyLevel": 65,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "",
+          "reactionText": "",
+          "nextDialogue": 17,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "",
+          "reactionText": "",
+          "nextDialogue": 17,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "",
+          "reactionText": "",
+          "nextDialogue": 17,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": -1,
+      "anxietyLevel": 0,
+      "speaker": "lmao",
+      "caricatureName": "",
+      "dialogue": "haha you fucking loser you died LMAO",
+      "JustText": true,
+      "hideUI": true,
+      "choices": [
+        {
+          "choice": "retry",
+          "reactionText": "restarting",
+          "nextDialogue": 0,
+          "choiceThoughts":
+          [
+            {"text": "retry", "intensity": 0}
           ]
         }
       ]
