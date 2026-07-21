@@ -413,7 +413,7 @@
       "anxietyLevel": 20,
       "speaker": "Alex",
       "caricatureName": "",
-      "dialogue": "Dang, i hope you feel better.",
+      "dialogue": "Dang, sorry to hear.",
       "JustText": false,
       "hideUI": false,
       "choices": [
@@ -675,27 +675,199 @@
       "anxietyLevel": 65,
       "speaker": "Alex",
       "caricatureName": "",
-      "dialogue": "",
+      "dialogue": "Oh, our food's here.",
       "JustText": false,
       "hideUI": false,
       "choices": [
         {
-          "choice": "",
-          "reactionText": "",
-          "nextDialogue": 17,
+          "choice": "(just dig in)",
+          "reactionText": "I'M SO HUNGRY",
+          "nextDialogue": 1234567890,
           "choiceThoughts":
           [
+            {"text": "IT LOOKS SO GOOD", "intensity": 0},
+            {"text": "I'M SO HUNGRY", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Awesome.",
+          "reactionText": "THAT'S A REALLY GOOD BURGER",
+          "nextDialogue": 19,
+          "choiceThoughts":
+          [
+            {"text": "IT LOOKS REALLY GOOD", "intensity": 0},
+            {"text": "I REALLY WANT TO EAT", "intensity": 0},
+            {"text": "WHY AM I SUDDENLY SO HUNGRY", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Dope.",
+          "reactionText": "WHY AM I SO HUNGRY",
+          "nextDialogue": 19,
+          "choiceThoughts":
+          [
+            {"text": "FUCK IM HUNGRY", "intensity": 0},
+            {"text": "I REALLY WANNA EAT", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "anxietyLevel": 20,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Dig in, i guess.",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "(just dig in)",
+          "reactionText": "I'M SO HUNGRY",
+          "nextDialogue": 20,
+          "choiceThoughts":
+          [
+            {"text": "I'M SO HUNGRY", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Yup.",
+          "reactionText": "THAT'S A REALLY GOOD BURGER",
+          "nextDialogue": 20,
+          "choiceThoughts":
+          [
+            {"text": "LET ME EAT", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        },
+        {
+          "choice": "Bon appetit",
+          "reactionText": "THAT WAS DUMB",
+          "nextDialogue": 20,
+          "choiceThoughts":
+          [
+            {"text": "I DONT EVEN CARE IM TOO HUNGRY", "intensity": 0},
+            {"text": "", "intensity": 0},
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "anxietyLevel": 10,
+      "speaker": "Narrator",
+      "caricatureName": "",
+      "dialogue": "You both eat in silence",
+      "JustText": true,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Continue.",
+          "reactionText": "",
+          "nextDialogue": 21,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "anxietyLevel": 0,
+      "speaker": "Narrator",
+      "caricatureName": "",
+      "dialogue": "Fifteen minutes pass as you eat",
+      "JustText": true,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Continue.",
+          "reactionText": "",
+          "nextDialogue": 22,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "anxietyLevel": 5,
+      "speaker": "You",
+      "caricatureName": "",
+      "dialogue": "Damn, for fast food, that's a pretty fucking good burger.",
+      "JustText": true,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Continue.",
+          "reactionText": "",
+          "nextDialogue": 23,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "anxietyLevel": 5,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Yeah.",
+      "JustText": true,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Continue.",
+          "reactionText": "",
+          "nextDialogue": 24,
+          "choiceThoughts":
+          [
+            {"text": "", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "anxietyLevel": 25,
+      "speaker": "Alex",
+      "caricatureName": "",
+      "dialogue": "Thanks for coming out, its been a while since we've talked.",
+      "JustText": false,
+      "hideUI": false,
+      "choices": [
+        {
+          "choice": "Of course.",
+          "reactionText": "I'M SO HUNGRY",
+          "nextDialogue": -2,
+          "choiceThoughts":
+          [
+            {"text": "Thank god it's over", "intensity": 0},
+            {"text": "", "intensity": 0},
             {"text": "", "intensity": 0},
             {"text": "", "intensity": 0},
             {"text": "", "intensity": 0}
           ]
         },
         {
-          "choice": "",
-          "reactionText": "",
-          "nextDialogue": 17,
+          "choice": "No problem.",
+          "reactionText": "THAT'S A REALLY GOOD BURGER",
+          "nextDialogue": -2,
           "choiceThoughts":
           [
+            {"text": "Thank god it's over", "intensity": 0},
             {"text": "", "intensity": 0},
             {"text": "", "intensity": 0},
             {"text": "", "intensity": 0},
@@ -703,11 +875,13 @@
           ]
         },
         {
-          "choice": "",
-          "reactionText": "",
-          "nextDialogue": 17,
+          "choice": "It was nothin'.",
+          "reactionText": "THAT WAS DUMB",
+          "nextDialogue": -2,
           "choiceThoughts":
           [
+            {"text": "Thank god it's over", "intensity": 0},
+            {"text": "", "intensity": 0},
             {"text": "", "intensity": 0},
             {"text": "", "intensity": 0},
             {"text": "", "intensity": 0}
@@ -726,6 +900,46 @@
       "choices": [
         {
           "choice": "retry",
+          "reactionText": "restarting",
+          "nextDialogue": 0,
+          "choiceThoughts":
+          [
+            {"text": "retry", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": -2,
+      "anxietyLevel": 0,
+      "speaker": "dope",
+      "caricatureName": "",
+      "dialogue": "you got the better ending",
+      "JustText": true,
+      "hideUI": true,
+      "choices": [
+        {
+          "choice": "retry",
+          "reactionText": "restarting",
+          "nextDialogue": 0,
+          "choiceThoughts":
+          [
+            {"text": "retry", "intensity": 0}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1234567890,
+      "anxietyLevel": 0,
+      "speaker": "lmao",
+      "caricatureName": "",
+      "dialogue": "you got to a path that isnt finished lol",
+      "JustText": true,
+      "hideUI": true,
+      "choices": [
+        {
+          "choice": "",
           "reactionText": "restarting",
           "nextDialogue": 0,
           "choiceThoughts":
